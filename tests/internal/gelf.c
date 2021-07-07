@@ -10,7 +10,7 @@
 #include <string.h>
 
 #define EXPECTED_OUT \
-    "{\"version\":\"1.1\", \"short_message\":\"true, 2019, str\", \"_t2\":\"false\", \"timestamp\":337647600.1234}"
+    "{\"version\":\"1.1\", \"short_message\":\"true, 2019, str\", \"_t2\":\"false\", \"timestamp\":337647600.012}"
 
 void test_gelf_pack()
 {
@@ -26,7 +26,7 @@ void test_gelf_pack()
 
 
     ts.tm.tv_sec = 337647600;
-    ts.tm.tv_nsec = 1234111111;
+    ts.tm.tv_nsec = 12341111;
 
     msgpack_pack_map(&mp_pck, 2);
     msgpack_pack_str(&mp_pck, 2);
